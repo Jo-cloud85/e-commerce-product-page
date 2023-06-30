@@ -27,11 +27,11 @@
       <div class="container">
         <div class="main-navLinks">
           <!-- menu toggle -->
-          <button class="menu-hamburger-toggle hidden" aria-controls="main-navLinks--others" aria-expanded="false"><i class="ri-menu-4-line"></i></a><span class="sr-only">Menu</span></button>
+          <button class="menu-hamburger-toggle hidden" aria-expanded="false"><i class="ri-menu-4-line"></i></a><span class="sr-only">Menu</span></button>
           <!-- company logo toggle -->
           <img id="company-logo--side--mobile-only" src="./images/shoe-icon.png" alt="Company Icon">
           <!-- company -->
-          <div class="main-navLinks--company"><a href="#" id="company-name"><img id="company-logo" src="./images/shoe-icon.png" alt="Company Icon">UrbanSquad</a></div>
+          <div class="main-navLinks--company"><a href="#" class="company-name"><img id="company-logo" src="./images/shoe-icon.png" alt="Company Icon">UrbanSquad</a></div>
           <!-- shop, about, support, location, account, search -->
           <div class="main-navLinks--others scrollto" data-visible="false">
             <ul class="left">
@@ -151,13 +151,13 @@
                   </li>
                 </ul>
               </li>
-              <li class="navUserLinks"><a href="#" id="account"><span class="icon-small"><i class="ri-user-line"></i></span><span class="navLinkTitle hidden">Account</span></a></li>
-              <li class="navUserLinks" id="search-user-link"><button href="#" id="search"><span class="icon-small"><i class="ri-search-line"></i></span></button>
+              <li class="navUserLinks"><a href="#" id="account"><span class="icon-small"><i class="ri-user-line"></i><span class="sr-only">Share</span></span><span class="navLinkTitle hidden">Account</span></a></li>
+              <li class="navUserLinks" id="search-user-link"><a href="#" id="search"><span class="icon-small"><i class="ri-search-line"></i></span></a>
                 <!-- search-bar -->
                 <div id="search-float" class="float">
-                  <form action="" role="search">
+                  <form action="#" role="search">
                     <input type="search" class="search-input" id="search_desktop" placeholder="Search ..." data-error-message="Search field cannot be empty." autocomplete="off">
-                    <button class="close-btn" aria-controls="float" aria-label="close" role="button"><span id="cross"></span><span class="sr-only">Close</span></button>
+                    <button class="close-btn" aria-label="close"><span id="cross"></span><span class="sr-only">Close</span></button>
                   </form>
                 </div>
               </li>
@@ -238,12 +238,12 @@
                 <h1 class="title">Jordan Xxxvii</h1>
                 <div>
                   <label class="heart-container">
-                    <input type="checkbox">
-                    <svg id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <input type="checkbox" name="heart-shaped checkbox">
+                    <svg id="Layer_1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <path d="M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z"></path>
                     </svg>
                   </label>
-                  <a href="#0" trigger-button data-target="data-share"><i class="ri-share-line"></i></a>
+                  <a href="#0" class="trigger-button" data-target="data-share"><i class="ri-share-line"></i><span class="sr-only">Share</span></a>
                 </div>
               </div>
 
@@ -297,7 +297,7 @@
                     <span class="item-qty">1</span>
                     <button class="increase">+</button>
                   </div>
-                  <button trigger-button data-target="data-cart" type="submit" class="addcart-btn">Add to cart</button>
+                  <button class="trigger-button addcart-btn" data-target="data-cart" type="submit">Add to cart</button>
                 </div>
               </div>
 
@@ -308,7 +308,7 @@
                   <li><i class="ri-map-pin-line"></i><span>Self pick-up</span><a href="#" class="gray-color">at our nearest store</a></li>
                 </ul>
               </div>
-              <a href="#" trigger-button data-target="data-feedback" id="feedback-a">Have feedback? We love to here from you!</a>
+              <a href="#" class="trigger-button" data-target="data-feedback" id="feedback-a">Have feedback? We love to here from you!</a>
             </div>
           </div>
 
@@ -326,7 +326,7 @@
           </nav>
           <div id="product-description" class="product-about description active">
             <div>
-              <h4>Product description</h4>
+              <h2>Product description</h2>
             </div>
             <ul>
               <li>
@@ -335,20 +335,20 @@
                   layers of tough, reinforced leno-weave fabric that'll keep you contained—and leave your game uncompromised.</p>
               </li>
               <li>
-                <h4>Light and Secure</h4>
+                <h2>Light and Secure</h2>
                 <p>The strong, lightweight upper—designed to mimic the support given by a taped up ankle—is made from layers of leno-weave fabric and
                   strong plastic ribbon that hold tight without weighing you down.</p>
               </li>
               <li>
-                <h4>Air on Air</h4>
+                <h2>Air on Air</h2>
                 <p>Double stacked Air in the forefoot gives you energy-returning responsiveness, letting you stop and start on a dime.</p>
               </li>
               <li>
-                <h4>Assisted Crash Landing</h4>
+                <h2>Assisted Crash Landing</h2>
                 <p>Formula 23, Jordan's signature foam, is stacked thick in the heel so you can come down as hard as necessary without aftershocks—and bounce right back.</p>
               </li>
               <li>
-                <h4>More benefits</h4>
+                <h2>More benefits</h2>
                 <ul id="product-benefits">
                   <li>Top line shape and Jordan Air on the tongue nod to the AJ7's iconic design.</li>
                   <li>Upper design is a throw back to the exoskeleton style of the AJ7.</li>
@@ -360,15 +360,15 @@
           </div>
           <div id="product-reviews" class="product-about review">
             <div>
-              <h4>Rating & Reviews (15)</h4>
-              <button type="submit" trigger-button data-target="data-review" class="secondary-btn">Write a review</button>
+              <h2>Rating & Reviews (15)</h2>
+              <button type="submit" class="trigger-button" data-target="data-review" class="secondary-btn">Write a review</button>
             </div>
             <div class="body-review">
               <div class="profile">
                 <span class="thumb-name">Connor</span>
                 <div class="review-details">
                   <span class="rating">★★★★★<span class="date"> · 2 weeks ago </span></span>
-                  <h4 class="review-header">Stylish and comfy</h4>
+                  <h2 class="review-header">Stylish and comfy</h2>
                   <p class="review-description">The shoe looks awesome and feels awesome. My first pair had an issue where it rubbed my ankle but I went down half
                     a size on my next pair and it eliminated that problem. Even after going down half a size the shoe still fits.</p>
                   <span class="review-recommend">Recommends this product<span class="indication"> ✔ Yes</span></span>
@@ -378,7 +378,7 @@
                 <span class="thumb-name">Erwin</span>
                 <div class="review-details">
                   <span class="rating">★★★★★<span class="date"> · Jun 1, 2023 </span></span>
-                  <h4 class="review-header">Great shoe great deal!</h4>
+                  <h2 class="review-header">Great shoe great deal!</h2>
                   <p class="review-description">Great pair of sneakers. High quality material. Uniques carbon fiber material on the arch support. Super nice 👍</p>
                   <span class="review-recommend">Recommends this product<span class="indication"> ✔ Yes</span></span>
                 </div>
@@ -387,7 +387,7 @@
                 <span class="thumb-name">Mikey123</span>
                 <div class="review-details">
                   <span class="rating">★★★★☆<span class="date"> · May 17, 2023 </span></span>
-                  <h4 class="review-header">Perfect</h4>
+                  <h2 class="review-header">Perfect</h2>
                   <p class="review-description">I wear a size 13.5 and a 13 felt great, these shoes run a half size too big but perfect for me.
                     The material feels cheap but is extremely durable, I'm a very explosive player that get blisters often. 5 hours in these shoes at the YMCA 5v5 runs and had zero issues.</p>
                   <span class="review-recommend">Recommends this product<span class="indication"> ✔ Yes</span></span>
@@ -397,7 +397,7 @@
                 <span class="thumb-name">Jm675</span>
                 <div class="review-details">
                   <span class="rating">★★★★★<span class="date"> · May 02, 2023 </span></span>
-                  <h4 class="review-header">Phenomenon design</h4>
+                  <h2 class="review-header">Phenomenon design</h2>
                   <p class="review-description">Super light weight and comfy. Good for everyday use and exercise.</p>
                   <span class="review-recommend">Recommends this product<span class="indication"> ✔ Yes</span></span>
                 </div>
@@ -406,11 +406,11 @@
           </div>
           <div id="product-shipping" class="product-about shipping">
             <div>
-              <h4>Shipping & Returns</h4>
+              <h2>Shipping & Returns</h2>
             </div>
             <ul>
               <li>
-                <p>Free standard shipping on orders $50+ and free 60-day returns for Nike Members.
+                <p>Free standard shipping on orders $80+ and free 60-day returns for UrbanSquad Members.
                   <a href="#">Learn more.</a>
                   <a href="#">Return policy exclusions apply.</a>
                 </p>
@@ -426,16 +426,16 @@
   <footer>
     <div class="footer-container">
       <div class="footer-logo">
-        <a href="#" id="company-name">UrbanSquad</a>
+        <a href="#" class="company-name">UrbanSquad</a>
       </div>
 
       <div class="footer-signup">
         <p class="description" id="description_1">Stay in the loop.</p>
         <p class="description" id="description_2">Sign up for email updates today.</p>
-        <form action="" role="form" class="footer_signup-form">
+        <form action="#" class="footer_signup-form">
           <label class="input_row-label form-control-label" for="login-form-email">Email Address *</label>
           <div class="form-group required">
-            <input type="email" class="signup-email" name="email-signUp" autocomplete="off" data-missing-error="Please fill out this field." data-pattern-mismatch="Please enter a valid email address." data-range-error="Must be less than 254 characters required." aria-label="Email Address *" required="" maxlength="254" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
+            <input type="email" class="signup-email" id="login-form-email" name="email-signUp" autocomplete="off" data-missing-error="Please fill out this field." data-pattern-mismatch="Please enter a valid email address." data-range-error="Must be less than 254 characters required." aria-label="Email Address *" required="" maxlength="254" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
             <div class="invalid-feedback"></div>
           </div>
           <button type="submit" class="signup-button">Sign Up</button>
@@ -537,7 +537,7 @@
   <div id="data-share" class="data-popup d-share">
     <div class="wrap">
       <div class="data-content">
-        <a href="#" close-button class="close-trigger"><i class="ri-close-line"></i></a>
+        <a href="#" class="close-button close-trigger"><i class="ri-close-line"></i></a>
         <div class="form">
           <label>Copy link</label>
           <input type="text" disabled value="https://www.urbansquad.com/">
@@ -560,7 +560,7 @@
   <div id="data-feedback" class="data-popup d-feedback">
     <div class="wrap">
       <div class="data-content" id="feedback-form">
-        <a href="#" close-button class="close-trigger"><i class="ri-close-line"></i></a>
+        <a href="#" class="close-button close-trigger"><i class="ri-close-line"></i></a>
         <h3>Your Feedback</h3>
         <form action="#" id="popup-feedback-form">
           <input type="text" placeholder="Name">
@@ -575,9 +575,9 @@
   <div id="data-review" class="data-popup d-review">
     <div class="wrap">
       <div class="data-content" id="review-form">
-        <a href="#" close-button class="close-trigger"><i class="ri-close-line"></i></a>
+        <a href="#" class="close-button close-trigger"><i class="ri-close-line"></i></a>
         <h3>Write a Review</h3>
-        <form action="" id="popup-review-form">
+        <form action="#" id="popup-review-form">
           <div class="dot-grid">
             <div class="wrapper">
               <input type="text" placeholder="Name">
@@ -611,7 +611,7 @@
 
   <div id="data-cart" class="cart-menu">
     <div class="wrap">
-      <a href="#0" close-button class="close-trigger"><i class="ri-close-line"></i></a>
+      <a href="#0" class="close-button close-trigger"><i class="ri-close-line"></i></a>
       <div class="scrollto cart-outer">
         <div class="wrapper">
           <div class="cart-list">
@@ -639,7 +639,7 @@
                           </div>
                         </div>
                         <div class="variants">
-                          <h4 class="dot-title"><a href="">Jordan Xxxvii</a></h4>
+                          <h2 class="dot-title"><a href="">Jordan Xxxvii</a></h2>
                           <div class="color gray-color">
                             <span>Color:</span>
                             <span>White Citrus</span>
@@ -662,7 +662,7 @@
 
             <div class="cart-footer">
               <div class="discount">
-                <form action="">
+                <form action="#">
                   <input type="text" class="input" placeholder="Coupon">
                   <input type="submit" class="submit" value="Apply">
                 </form>
@@ -673,23 +673,25 @@
                     <span>Subtotal</span>
                     <span class="value"></span>
                   </li>
-                  <ul>
-                    <li><span>Shipping</span></li>
-                    <li id="free-shipping">
-                      <div class="checker-grp">
-                        <input type="radio" class="checker" name="shipping" checked>
-                        <label for="">Free</label>
-                      </div>
-                      <span class="value">$188.30</span>
-                    </li>
-                    <li id="flat-shipping">
-                      <div class="checker-grp">
-                        <input type="radio" class="checker" name="shipping">
-                        <label for="">Flat</label>
-                      </div>
-                      <span class="value">$188.30</span>
-                    </li>
-                  </ul>
+                  <li>
+                    <ul>
+                      <li><span>Shipping</span></li>
+                      <li id="free-shipping">
+                        <div class="checker-grp">
+                          <input type="radio" class="checker" id="free radio button" name="shipping" checked>
+                          <label for="free radio button">Free</label>
+                        </div>
+                        <span class="value">$188.30</span>
+                      </li>
+                      <li id="flat-shipping">
+                        <div class="checker-grp">
+                          <input type="radio" class="checker" id="flat radio button" name="shipping">
+                          <label for="flat radio button">Flat</label>
+                        </div>
+                        <span class="value">$188.30</span>
+                      </li>
+                    </ul>
+                  </li>
                   <li class="discount">
                     <span>Promo discount</span>
                     <span class="value">- $0.00</span>

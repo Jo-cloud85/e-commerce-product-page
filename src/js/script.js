@@ -76,8 +76,8 @@ for (let i=0; i<priceGrps.length; i++) {
 }
 
 //trigger open & close 
-const triggerOpen = document.querySelectorAll('[trigger-button]');
-const triggerClose = document.querySelectorAll ('[close-button]');
+const triggerOpen = document.querySelectorAll('.trigger-button');
+const triggerClose = document.querySelectorAll ('.close-button');
 const overlay = document.querySelector('[data-overlay]');
 
 for (let i=0; i<triggerOpen.length; i++) {
@@ -94,7 +94,7 @@ for (let i=0; i<triggerOpen.length; i++) {
 		overlay.classList.add('active');
 	});
 
-	targetEl.querySelector('[close-button]').addEventListener('click', openData);
+	targetEl.querySelector('.close-button').addEventListener('click', openData);
 	overlay.addEventListener('click', openData);
 }
 

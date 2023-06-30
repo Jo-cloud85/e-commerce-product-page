@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/css/styles.css">
+  <link rel="stylesheet" href="./src/css/plus-minus.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="header-top">
+      <div class="container">
+        <div class="main-navLinks">
+          <!-- menu toggle -->
+          <button class="menu-hamburger-toggle hidden" aria-controls="main-navLinks--others" aria-expanded="false"><i class="ri-menu-4-line"></i></a><span class="sr-only">Menu</span></button>
+          <!-- company logo toggle -->
+          <img id="company-logo--side--mobile-only" src="./images/shoe-icon.png" alt="Company Icon">
+          <!-- company -->
+          <div class="main-navLinks--company"><a href="#" id="company-name"><img id="company-logo" src="./images/shoe-icon.png" alt="Company Icon">UrbanSquad</a></div>
+          <!-- shop, about, support, location, account, search -->
+          <div class="main-navLinks--others scrollto" data-visible="false">
+            <ul class="left">
+              <li class="navLinks">
+                <a href="#" class="header-sub-menu-a" onclick="plusMinusToggle(this, 'header-sub-menu--shop')">
+                  <span class="navLinkTitle">Shop<span class="plusminus"></span></span>
+                </a>
+                <ul class="header-sub-menu" id="header-sub-menu--shop">
+                  <li class="shop" id="shop-featured-sale" onclick="plusMinusToggle(this, 'featured')"><span class="hidden">Featured & Sale<span class="plusminus"></span></span>
+                    <ul id="featured">
+                      <li><a href="#" class="shop-highlights">New Arrivals</a></li>
+                      <li><a href="#" class="shop-highlights">Limited Editions</a></li>
+                      <li><a href="#" class="shop-highlights">Icons</a></li>
+                      <li><a href="#" class="shop-highlights" id="sale-text">Sale</a></li>
+                    </ul>
+                  </li>
+                  <li class="shop" id="shop-men" onclick="plusMinusToggle(this, 'men')"><span>Men<span class="plusminus"></span></span>
+                    <ul id="men">
+                      <li><a href="#" class="shop-categories"><span>Shop all men</span></a></li>
+                    </ul>
+                  </li>
+                  <li class="shop" onclick="plusMinusToggle(this, 'women')"><span>Women<span class="plusminus"></span></span>
+                    <ul id="women">
+                      <li><a href="#" class="shop-categories"><span>Shop all women</span></a></li>
+                    </ul>
+                  </li>
+                  <li class="shop" onclick="plusMinusToggle(this, 'brands')"><span>Brands<span class="plusminus"></span></span>
+                    <ul id="brands">
+                      <li><a href="#" class="shop-categories"><span>Shop all brands</span></a></li>
+                    </ul>
+                  </li>
+                  <li class="shop" onclick="plusMinusToggle(this, 'collections')"><span>Collections<span class="plusminus"></span></span>
+                    <ul id="collections">
+                      <li><a href="#" class="shop-categories"><span>Shop all Collections</span></a></li>
+                    </ul>
+                  </li>
+                  <li class="shop" onclick="plusMinusToggle(this, 'accessories')"><span>Accessories<span class="plusminus"></span></span>
+                    <ul id="accessories">
+                      <li><a href="#" class="shop-categories"><span>Shop all accessories</span></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="navLinks"><a href="#" class="header-sub-menu-a" onclick="plusMinusToggle(this, 'header-sub-menu--about')"><span class="navLinkTitle">About UrbanSquad<span class="plusminus"></span></span></a>
+                <ul class="header-sub-menu" id="header-sub-menu--about">
+                  <li class="about">
+                    <a href="#">
+                      <div class="about-images"><img src="./images/mission.jpg" alt="Mission Image"></div>
+                      <div>Our Mission</div>
+                    </a>
+                  </li>
+                  <li class="about">
+                    <a href="#">
+                      <div class="about-images"><img src="./images/culture.jpg" alt="Culture Image"></div>
+                      <div>Our Culture</div>
+                    </a>
+                  </li>
+                  <li class="about">
+                    <a href="#">
+                      <div class="about-images"><img src="./images/sustainable-efforts.jpg" alt="Sustainable Efforts Image"></div>
+                      <div>Our Sustainable Efforts</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="right">
+              <li class="navLinks"><a href="#" class="header-sub-menu-a" onclick="plusMinusToggle(this, 'header-sub-menu--support')"><span class="navLinkTitle">Support<span class="plusminus"></span></span></a>
+                <ul class="header-sub-menu" id="header-sub-menu--support">
+                  <li class="support"><a href="#">Help Center</a></li>
+                  <li class="support"><a href="#">Product Help</a></li>
+                  <li class="support"><a href="#">Warranty</a></li>
+                  <li class="support"><a href="#">Order Status</a></li>
+                </ul>
+              </li>
+              <li class="navLinks"><a href="#" class="header-sub-menu-a" onclick="plusMinusToggle(this, 'header-sub-menu--regions')"><img id="flag" src="./images/us-en-flag.png" alt="Country Flag"><span class="navLinkTitle" id="location">Location<span class="plusminus"></span></span></i></a>
+                <ul class="header-sub-menu" id="header-sub-menu--regions">
+                  <li class="region" onclick="plusMinusToggle(this, 'north-america')"><span>North America<span class="plusminus"></span></span>
+                    <ul id="north-america">
+                      <li><a href="#" class="countries">Cananda</a></li>
+                      <li><a href="#" class="countries">United States</a></li>
+                    </ul>
+                  </li>
+                  <li class="region" onclick="plusMinusToggle(this, 'south-america')"><span>South America<span class="plusminus"></span></span>
+                    <ul id="south-america">
+                      <li><a href="#" class="countries">Argentina</a></li>
+                      <li><a href="#" class="countries">Chile</a></li>
+                      <li><a href="#" class="countries">Peru</a></li>
+                    </ul>
+                  </li>
+                  <li class="region" onclick="plusMinusToggle(this, 'eu-me')"><span>Europe / Middle East<span class="plusminus"></span></span>
+                    <ul id="eu-me">
+                      <li><a href="#" class="countries">United Kingdom</a></li>
+                      <li><a href="#" class="countries">Europe (EN)</a></li>
+                      <li><a href="#" class="countries">Other Middle Eastern Countries</a></li>
+                    </ul>
+                  </li>
+                  <li class="region" onclick="plusMinusToggle(this, 'africa')"><span>Africa<span class="plusminus"></span></span>
+                    <ul id="africa">
+                      <li><a href="#" class="countries">South Africa</a></li>
+                    </ul>
+                  </li>
+                  <li class="region" onclick="plusMinusToggle(this, 'asia')"><span>Asia<span class="plusminus"></span></span>
+                    <ul id="asia">
+                      <li><a href="#" class="countries">Japan | 日本</a></li>
+                      <li><a href="#" class="countries">Mainland China | 中国内地</a></li>
+                      <li><a href="#" class="countries">China Taiwan | 中国台湾</a></li>
+                      <li><a href="#" class="countries">South Korea | 대한민국</a></li>
+                      <li><a href="#" class="countries">India</a></li>
+                    </ul>
+                  </li>
+                  <li class="region" onclick="plusMinusToggle(this, 'pacific')"><span>Pacific<span class="plusminus"></span></span>
+                    <ul id="pacific">
+                      <li><a href="#" class="countries">Australia</a></li>
+                      <li><a href="#" class="countries">New Zealand</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="navUserLinks"><a href="#" id="account"><span class="icon-small"><i class="ri-user-line"></i></span><span class="navLinkTitle hidden">Account</span></a></li>
+              <li class="navUserLinks" id="search-user-link"><button href="#" id="search"><span class="icon-small"><i class="ri-search-line"></i></span></button>
+                <!-- search-bar -->
+                <div id="search-float" class="float">
+                  <form action="" role="search">
+                    <input type="search" class="search-input" id="search_desktop" placeholder="Search ..." data-error-message="Search field cannot be empty." autocomplete="off">
+                    <button class="close-btn" aria-controls="float" aria-label="close" role="button"><span id="cross"></span><span class="sr-only">Close</span></button>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- shopping cart -->
+          <div class="main-navLinks--cart navUserLinks">
+            <a href="#">
+              <span class="icon-small cart"><i class="ri-shopping-cart-line"></i></span>
+              <span class="cart-item-num">0</span>
+            </a>
+          </div>
+          <!-- bg-overlay-->
+          <div class="bg-overlay"></div>
+        </div>
+      </div>
+
+  </header>
+
+  <main>
+    <div class="breadcrumb list-inline">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Men</a></li>
+        <li><a href="">Mens Footwear</a></li>
+        <li><a href="">Trainers</a></li>
+        <li><span>Jordan Xxxvii</span></li>
+      </ul>
+    </div>
+    <section class="single-product-section-container">
+      <div class="product dotgrid">
+        <div class="wrapper">
+          <div class="product-image">
+            <div class="outer-main">
+              <div class="main-image swiper">
+                <div class="wrap swiper-wrapper">
+                  <div class="item-p swiper-slide"><img src="./images/products/brands/Jordan/jordan_white-black_v2_right.webp" alt="Jordan"></div>
+                  <div class="item-p swiper-slide"><img src="./images/products/brands/Jordan/jordan_white-black_v2_angled.jpg" alt="Jordan"></div>
+                  <div class="item-p swiper-slide"><img src="./images/products/brands/Jordan/jordan_white-black_v2_back.webp" alt="Jordan"></div>
+                  <div class="item-p swiper-slide"><img src="./images/products/brands/Jordan/jordan_white-black_v2_left.webp" alt="Jordan"></div>
+                  <div class="item-p swiper-slide"><img src="./images/products/brands/Jordan/jordan_white-black_v2_top.jpg" alt="Jordan"></div>
+                  <div class="item-p swiper-slide"><img src="./images/products/brands/Jordan/jordan_white-black_v2_bottom.webp" alt="Jordan"></div>
+                </div>
+              </div>
+              <div class="custom-pagination">
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+            <div class="outer-thumb ob-cover">
+              <div class="thumbnail-image swiper">
+                <div class="wrap swiper-wrapper">
+                  <div class="item-p swiper-slide">
+                    <div class="thumb-wrap"><img src="./images/products/brands/Jordan/jordan_white-black_v2_right.webp" alt="Jordan"></div>
+                  </div>
+                  <div class="item-p swiper-slide">
+                    <div class="thumb-wrap"><img src="./images/products/brands/Jordan/jordan_white-black_v2_angled.jpg" alt="Jordan"></div>
+                  </div>
+                  <div class="item-p swiper-slide">
+                    <div class="thumb-wrap"><img src="./images/products/brands/Jordan/jordan_white-black_v2_back.webp" alt="Jordan"></div>
+                  </div>
+                  <div class="item-p swiper-slide">
+                    <div class="thumb-wrap"><img src="./images/products/brands/Jordan/jordan_white-black_v2_left.webp" alt="Jordan"></div>
+                  </div>
+                  <div class="item-p swiper-slide">
+                    <div class="thumb-wrap"><img src="./images/products/brands/Jordan/jordan_white-black_v2_top.jpg" alt="Jordan"></div>
+                  </div>
+                  <div class="item-p swiper-slide">
+                    <div class="thumb-wrap"><img src="./images/products/brands/Jordan/jordan_white-black_v2_bottom.webp" alt="Jordan"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-summary">
+            <div class="entry">
+              <div class="product-title">
+                <h1 class="title">Jordan Xxxvii</h1>
+                <div>
+                  <label class="heart-container">
+                    <input type="checkbox">
+                    <svg id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <path d="M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z"></path>
+                    </svg>
+                  </label>
+                  <a href="#0" trigger-button data-target="data-share"><i class="ri-share-line"></i></a>
+                </div>
+              </div>
+
+              <div class="product-group">
+                <div class="price-grp">
+                  <span class="original-price">S$ 269.00</span>
+                  <span class="sale-price">S$ 188.30</span>
+                </div>
+                <div class="product-rating">
+                  <span>★★★★★<span> 4.9</span></span>
+                  <a href="#">(15)</a>
+                </div>
+              </div>
+
+              <div class="product-color">
+                <span>White Citrus / 001</span>
+                <div class="wrap">
+                  <button class="white-citrus selected"><img src="./images/products/brands/Jordan/jordan_white-citrus_right.webp" alt="Jordan"></button>
+                  <button class="dark-charcoal"><img src="./images/products/brands/Jordan/jordan_dark_charcoal_right.webp" alt="Jordan"></button>
+                  <button class="light-bone"><img src="./images/products/brands/Jordan/jordan_light_bone_right.webp" alt="Jordan"></button>
+                  <button disabled class="light-silver"><img src="./images/products/brands/Jordan/jordan_light_silver_right.webp" alt="Jordan"></button>
+                  <button class="midnight-fog"><img src="./images/products/brands/Jordan/jordan_midnight_fog_right.webp" alt="Jordan"></button>
+                </div>
+              </div>
+
+              <div class="product-size">
+                <div>
+                  <span>Select size</span>
+                  <a href="#">Size guide</a>
+                </div>
+                <div class="wrap" id="size-btn-grp">
+                  <button>7</button>
+                  <button disabled>7.5</button>
+                  <button>8</button>
+                  <button class="selected">8.5</button>
+                  <button>9</button>
+                  <button>9.5</button>
+                  <button>10</button>
+                  <button disabled>10.5</button>
+                  <button>11</button>
+                  <button>11.5</button>
+                  <button disabled>12</button>
+                </div>
+              </div>
+
+              <div class="product-action">
+                <span>Qty</span>
+                <div>
+                  <div class="qty">
+                    <button class="decrease">-</button>
+                    <span class="item-qty">1</span>
+                    <button class="increase">+</button>
+                  </div>
+                  <button trigger-button data-target="data-cart" type="submit" class="addcart-btn">Add to cart</button>
+                </div>
+              </div>
+
+              <div class="shipping">
+                <ul>
+                  <li><i class="ri-gift-line"></i><span>Free shipping & return </span><span class="gray-color">On orders over $80</span></li>
+                  <li><i class="ri-truck-line"></i><span>Estimated Delivery: </span><span class="gray-color">07 - 14 Aug 2023</span></li>
+                  <li><i class="ri-map-pin-line"></i><span>Self pick-up</span><a href="#" class="gray-color">at our nearest store</a></li>
+                </ul>
+              </div>
+              <a href="#" trigger-button data-target="data-feedback" id="feedback-a">Have feedback? We love to here from you!</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="product detail">
+        <div class="tabbed">
+          <nav class="list-inline">
+            <ul class="product-detail-tabs">
+              <li class="active"><a href="#0" class="tabbed-trigger" data-id="product-description"><span>Description</span></a></li>
+              <li><a href="#0" class="tabbed-trigger" data-id="product-reviews"><span>Reviews</span></a></li>
+              <li><a href="#0" class="tabbed-trigger" data-id="product-shipping"><span>Shipping</span></a></li>
+            </ul>
+          </nav>
+          <div id="product-description" class="product-about description active">
+            <div>
+              <h4>Product description</h4>
+            </div>
+            <ul>
+              <li>
+                <p>You've got the hops and the speed—lace up in shoes that enhance what you bring to the court. The latest AJ is all about takeoffs and
+                  landings, with multiple Air units to get you off the ground and our signature Formula 23 foam to cushion your impact. Up top, you'll find
+                  layers of tough, reinforced leno-weave fabric that'll keep you contained—and leave your game uncompromised.</p>
+              </li>
+              <li>
+                <h4>Light and Secure</h4>
+                <p>The strong, lightweight upper—designed to mimic the support given by a taped up ankle—is made from layers of leno-weave fabric and
+                  strong plastic ribbon that hold tight without weighing you down.</p>
+              </li>
+              <li>
+                <h4>Air on Air</h4>
+                <p>Double stacked Air in the forefoot gives you energy-returning responsiveness, letting you stop and start on a dime.</p>
+              </li>
+              <li>
+                <h4>Assisted Crash Landing</h4>
+                <p>Formula 23, Jordan's signature foam, is stacked thick in the heel so you can come down as hard as necessary without aftershocks—and bounce right back.</p>
+              </li>
+              <li>
+                <h4>More benefits</h4>
+                <ul id="product-benefits">
+                  <li>Top line shape and Jordan Air on the tongue nod to the AJ7's iconic design.</li>
+                  <li>Upper design is a throw back to the exoskeleton style of the AJ7.</li>
+                  <li>Shown: White/Citrus/Black</li>
+                  <li>Style: DD6958-108</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div id="product-reviews" class="product-about review">
+            <div>
+              <h4>Rating & Reviews (15)</h4>
+              <button type="submit" trigger-button data-target="data-review" class="secondary-btn">Write a review</button>
+            </div>
+            <div class="body-review">
+              <div class="profile">
+                <span class="thumb-name">Connor</span>
+                <div class="review-details">
+                  <span class="rating">★★★★★<span class="date"> · 2 weeks ago </span></span>
+                  <h4 class="review-header">Stylish and comfy</h4>
+                  <p class="review-description">The shoe looks awesome and feels awesome. My first pair had an issue where it rubbed my ankle but I went down half
+                    a size on my next pair and it eliminated that problem. Even after going down half a size the shoe still fits.</p>
+                  <span class="review-recommend">Recommends this product<span class="indication"> ✔ Yes</span></span>
+                </div>
+              </div>
+              <div class="profile">
+                <span class="thumb-name">Erwin</span>
+                <div class="review-details">
+                  <span class="rating">★★★★★<span class="date"> · Jun 1, 2023 </span></span>
+                  <h4 class="review-header">Great shoe great deal!</h4>
+                  <p class="review-description">Great pair of sneakers. High quality material. Uniques carbon fiber material on the arch support. Super nice 👍</p>
+                  <span class="review-recommend">Recommends this product<span class="indication"> ✔ Yes</span></span>
+                </div>
+              </div>
+              <div class="profile">
+                <span class="thumb-name">Mikey123</span>
+                <div class="review-details">
+                  <span class="rating">★★★★☆<span class="date"> · May 17, 2023 </span></span>
+                  <h4 class="review-header">Perfect</h4>
+                  <p class="review-description">I wear a size 13.5 and a 13 felt great, these shoes run a half size too big but perfect for me.
+                    The material feels cheap but is extremely durable, I'm a very explosive player that get blisters often. 5 hours in these shoes at the YMCA 5v5 runs and had zero issues.</p>
+                  <span class="review-recommend">Recommends this product<span class="indication"> ✔ Yes</span></span>
+                </div>
+              </div>
+              <div class="profile">
+                <span class="thumb-name">Jm675</span>
+                <div class="review-details">
+                  <span class="rating">★★★★★<span class="date"> · May 02, 2023 </span></span>
+                  <h4 class="review-header">Phenomenon design</h4>
+                  <p class="review-description">Super light weight and comfy. Good for everyday use and exercise.</p>
+                  <span class="review-recommend">Recommends this product<span class="indication"> ✔ Yes</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="product-shipping" class="product-about shipping">
+            <div>
+              <h4>Shipping & Returns</h4>
+            </div>
+            <ul>
+              <li>
+                <p>Free standard shipping on orders $50+ and free 60-day returns for Nike Members.
+                  <a href="#">Learn more.</a>
+                  <a href="#">Return policy exclusions apply.</a>
+                </p>
+                <a href="#">Self pickup available at selected stores.</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <a href="#" id="company-name">UrbanSquad</a>
+      </div>
+
+      <div class="footer-signup">
+        <p class="description" id="description_1">Stay in the loop.</p>
+        <p class="description" id="description_2">Sign up for email updates today.</p>
+        <form action="" role="form" class="footer_signup-form">
+          <label class="input_row-label form-control-label" for="login-form-email">Email Address *</label>
+          <div class="form-group required">
+            <input type="email" class="signup-email" name="email-signUp" autocomplete="off" data-missing-error="Please fill out this field." data-pattern-mismatch="Please enter a valid email address." data-range-error="Must be less than 254 characters required." aria-label="Email Address *" required="" maxlength="254" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
+            <div class="invalid-feedback"></div>
+          </div>
+          <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+        <div class="signup-description">
+          * By providing your email, you agree to the <a class="link" href="#">Terms of Use</a> and <a class="link" href="#">Privacy Policy</a>.
+        </div>
+      </div>
+
+      <div class="footer-payment">
+        <p class="description" id="description_3">Accepted Payment Methods</p>
+        <div class="payment-logo-grp">
+          <div><img class="payment-logo" src="./images/payment/Mastercard_150px.svg" alt="Mastercard"></div>
+          <div><img class="payment-logo" src="./images/payment/Visa_150px.svg" alt="Visa"></div>
+          <div><img class="payment-logo" src="./images/payment/AMEX_150px.svg" alt="Amex"></div>
+          <div><img class="payment-logo" src="./images/payment/PayPal_150px.svg" alt="PayPal"></div>
+          <div><img class="payment-logo" src="./images/payment/Atome_150px.svg" alt="Atome"></div>
+        </div>
+      </div>
+
+      <div class="footer-nav-overall">
+        <ul class="footer-nav">
+          <li class="footer_navLinks">
+            <div class="footer-sub-menu-div">
+              <i class="ri-phone-line"></i>
+              <span class="footer_navLinkTitle">Phone Support</span>
+            </div>
+            <div class="footer-sub-menu">
+              <p>8001-865141</p>
+              <p>Mon-Fri from 9:00 - 18:00 SGT</p>
+              <p>Sat from 9:00 - 13:00 SGT</p>
+            </div>
+            <div class="footer-sub-menu-div">
+              <i class="ri-mail-send-fill"></i>
+              <span class="footer_navLinkTitle">Contact Us</span>
+            </div>
+          </li>
+          <li class="footer_navLinks">
+            <div class="footer-sub-menu-div" onclick="plusMinusToggle(this, 'footer-nav-service')">
+              <i class="ri-team-line"></i>
+              <span class="footer_navLinkTitle">Customer Service<span class="plusminus"></span></span>
+            </div>
+            <ul class="footer-sub-menu" id="footer-nav-service">
+              <li class="footer-sub-links"><a href="#">Help & FAQ</a></li>
+              <li class="footer-sub-links"><a href="#">Size Guide</a></li>
+              <li class="footer-sub-links"><a href="#">Shipping & Delivery</a></li>
+              <li class="footer-sub-links"><a href="#">Returns</a></li>
+              <li class="footer-sub-links"><a href="#">Store Locator</a></li>
+              <li class="footer-sub-links"><a href="#">Order Tracking</a></li>
+              <li class="footer-sub-links"><a href="#">Site Map</a></li>
+            </ul>
+          </li>
+
+          <li class="footer_navLinks">
+            <div class="footer-sub-menu-div" onclick="plusMinusToggle(this, 'footer-nav-about')">
+              <img id="company-logo-footer" src="./images/shoe-icon.png" alt="Company Icon">
+              <span class="footer_navLinkTitle">About Urbansquad<span class="plusminus"></span></span>
+            </div>
+            <ul class="footer-sub-menu" id="footer-nav-about">
+              <li class="footer-sub-links"><a href="#">Affliates</a></li>
+              <li class="footer-sub-links"><a href="#">About us</a></li>
+              <li class="footer-sub-links"><a href="#">Careers</a></li>
+            </ul>
+          </li>
+
+          <li class="footer_navLinks">
+            <div class="footer-sub-menu-div" onclick="plusMinusToggle(this, 'footer-nav-social')">
+              <i class="ri-account-pin-circle-line"></i>
+              <span class="footer_navLinkTitle">Urbansquad Socials<span class="plusminus"></span></span>
+            </div>
+            <ul class="footer-sub-menu" id="footer-nav-social">
+              <li class="footer-sub-links"><a href="#" class="social-type"><i class="ri-instagram-line"></i>Instagram</a></li>
+              <li class="footer-sub-links"><a href="#" class="social-type"><i class="ri-tiktok-line"></i>Tiktok</a></li>
+              <li class="footer-sub-links"><a href="#" class="social-type"><i class="ri-pinterest-line"></i>Pinterest</a></li>
+              <li class="footer-sub-links"><a href="#" class="social-type"><i class="ri-facebook-circle-line"></i>Facebook</a></li>
+              <li class="footer-sub-links"><a href="#" class="social-type"><i class="ri-youtube-line"></i>Youtube</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-copyright">
+        <span class="footer_copyright-year copyright_link">© 2023 UrbanSquad®, Inc. ___</span>
+        <span class="footer_copyright-links">
+          <a class="copyright_link" href="#">Privacy Policy /</a>
+          <a class="copyright_link" href="#">Terms of Use /</a>
+          <a class="copyright_link" href="#">Cookie Preferences</a>
+        </span>
+      </div>
+    </div>
+
+  </footer>
+
+  <div>
+    <div class="overlay" data-overlay></div>
+    <div id="mobile-menu" class="mobile-menu"></div>
+  </div>
+
+  <div id="data-share" class="data-popup d-share">
+    <div class="wrap">
+      <div class="data-content">
+        <a href="#" close-button class="close-trigger"><i class="ri-close-line"></i></a>
+        <div class="form">
+          <label>Copy link</label>
+          <input type="text" disabled value="https://www.urbansquad.com/">
+          <span><i class="ri-file-copy-line"></i></span>
+        </div>
+        <div class="media-share list-inline">
+          <label>Share</label>
+          <ul class="modal-sub-menu" id="modal-nav-social">
+            <li class=""><a href="#" class="social-type"><i class="ri-instagram-line"></i></a></li>
+            <li class=""><a href="#" class="social-type"><i class="ri-tiktok-line"></i></a></li>
+            <li class=""><a href="#" class="social-type"><i class="ri-pinterest-line"></i></a></li>
+            <li class=""><a href="#" class="social-type"><i class="ri-facebook-circle-line"></i></a></li>
+            <li class=""><a href="#" class="social-type"><i class="ri-youtube-line"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="data-feedback" class="data-popup d-feedback">
+    <div class="wrap">
+      <div class="data-content" id="feedback-form">
+        <a href="#" close-button class="close-trigger"><i class="ri-close-line"></i></a>
+        <h3>Your Feedback</h3>
+        <form action="#" id="popup-feedback-form">
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email">
+          <div><textarea placeholder="Write your feedback here ..." cols="30" rows="6"></textarea></div>
+          <button type="submit" class="secondary-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="data-review" class="data-popup d-review">
+    <div class="wrap">
+      <div class="data-content" id="review-form">
+        <a href="#" close-button class="close-trigger"><i class="ri-close-line"></i></a>
+        <h3>Write a Review</h3>
+        <form action="" id="popup-review-form">
+          <div class="dot-grid">
+            <div class="wrapper">
+              <input type="text" placeholder="Name">
+              <input type="email" placeholder="Email">
+            </div>
+            <div class="rating">
+              <span>Your rating: </span>
+              <div class="stars">
+                <input type="radio" name="rating" id="star1">
+                <label for="star1"><i class="ri-star-fill"></i></label>
+                <input type="radio" name="rating" id="star2">
+                <label for="star2"><i class="ri-star-fill"></i></label>
+                <input type="radio" name="rating" id="star3">
+                <label for="star3"><i class="ri-star-fill"></i></label>
+                <input type="radio" name="rating" id="star4">
+                <label for="star4"><i class="ri-star-fill"></i></label>
+                <input type="radio" name="rating" id="star5">
+                <label for="star5"><i class="ri-star-fill"></i></label>
+              </div>
+            </div>
+            <div class="wrapper2">
+              <input type="text" placeholder="Review title">
+              <div><textarea placeholder="Write your review here ..." cols="30" rows="6"></textarea></div>
+              <button type="submit" class="secondary-btn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="data-cart" class="cart-menu">
+    <div class="wrap">
+      <a href="#0" close-button class="close-trigger"><i class="ri-close-line"></i></a>
+      <div class="scrollto cart-outer">
+        <div class="wrapper">
+          <div class="cart-list">
+            <div class="wrapper">
+              <div class="cart-header">
+                <h3>Shopping cart</h3>
+              </div>
+              <div class="cart-body scrollto">
+                <div class="product-list">
+                  <div class="wrapper">
+                    <ul>
+                      <li>
+                        <div class="grouping">
+                          <div class="quantity">
+                            <div class="control">
+                              <button class="control-increase">+</button>
+                              <span class="item-qty">1</span>
+                              <button class="control-decrease">-</button>
+                            </div>
+                          </div>
+                          <div class="thumbnail">
+                            <a href="">
+                              <img src="./images/products/brands/Jordan/jordan_white-citrus_right.webp" alt="Jordan">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="variants">
+                          <h4 class="dot-title"><a href="">Jordan Xxxvii</a></h4>
+                          <div class="color gray-color">
+                            <span>Color:</span>
+                            <span>White Citrus</span>
+                          </div>
+                          <div class="size gray-color">
+                            <span>Size:</span>
+                            <span>8.5</span>
+                          </div>
+                          <div class="price">$188.30</div>
+                          <a href="" class="item-remove">
+                            <i class="ri-close-line"></i>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-footer">
+              <div class="discount">
+                <form action="">
+                  <input type="text" class="input" placeholder="Coupon">
+                  <input type="submit" class="submit" value="Apply">
+                </form>
+              </div>
+              <div class="math-pricing">
+                <ul>
+                  <li>
+                    <span>Subtotal</span>
+                    <span class="value"></span>
+                  </li>
+                  <ul>
+                    <li><span>Shipping</span></li>
+                    <li id="free-shipping">
+                      <div class="checker-grp">
+                        <input type="radio" class="checker" name="shipping" checked>
+                        <label for="">Free</label>
+                      </div>
+                      <span class="value">$188.30</span>
+                    </li>
+                    <li id="flat-shipping">
+                      <div class="checker-grp">
+                        <input type="radio" class="checker" name="shipping">
+                        <label for="">Flat</label>
+                      </div>
+                      <span class="value">$188.30</span>
+                    </li>
+                  </ul>
+                  <li class="discount">
+                    <span>Promo discount</span>
+                    <span class="value">- $0.00</span>
+                  </li>
+                  <li class="total">
+                    <span>Total</span>
+                    <span class="value">$188.30</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="button">
+                <a href="" class="secondary-btn">Checkout</a>
+                <a href="" class="grey-link">View cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./src/js/script.js"></script>
+</body>
+
+</html>

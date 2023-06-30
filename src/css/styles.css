@@ -1547,7 +1547,7 @@ footer {
 
 @media (min-width: 599px) {
     .signup-email {
-        min-width: 20rem;
+        min-width: 15rem;
     }
 }
 
